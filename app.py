@@ -35,12 +35,12 @@ class ReusableForm(Form):
     def register():
         form = ReusableForm(request.form)
     
-        print form.errors
+        print(form.errors)
         if request.method == 'POST':
             name=request.form['name']
             password=request.form['password']
             email=request.form['email']
-            print name, " ", email, " ", password
+            print(name, " ", email, " ", password)
     
         if form.validate():
         # Save the comment here.
