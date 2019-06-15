@@ -2,7 +2,7 @@
 
 
 {% block body %}
-<title>Registration</title>
+<!-- <title>Registration</title>
 
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
@@ -18,8 +18,50 @@
                 { { form.name.label }} { { form.name }}</div>
 <div class="input submit">
                 <input type="submit" value="Submit"></div>
-</form>
+</form> -->
 
+<title>Reusable Form Demo</title>
+        	 	<link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
+        	 	<link rel="stylesheet" href="static/bootstrap-theme.min.css">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+<h1>Registration Page</h2>
+<!-- <form action="" method="post" role="form">
+    { { form.csrf }} -->
+<div class="form-group">
+      <!-- <label for="name">Registration Information:</label> -->
+    <h3>Name</h3>
+    <input type="text" class="form-control" id="name" name="name" placeholder="What's your first and last name?">
+    <h3>Address</h3>
+    <input type="text" class="form-control" id="address" name="address" placeholder="What's your address?">
+    <h3>Email</h3>
+    <input type="text" class="form-control" id="email" name="email address" placeholder="What's your email address?">
+    <h3>Phone Number</h3>
+    <input type="text" class="form-control" id="phone number" name="phone number" placeholder="What's your phone number?">
+    <h3>Username</h3>
+    <input type="text" class="form-control" id="username" name="username" placeholder="Please type your desired username">
+    <h3>Password</h3>
+    <input type="text" class="form-control" id="password" name="password" placeholder="Please type your desired password">
 
+</div>
+<button type="submit" class="btn btn-success">Sign Up</button>
+</form>{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+
+{% for message in messages %}
+{% if "Error" not in message[1]: %}
+<div class="alert alert-info">
+                <strong>Success! </strong> { { message[1] }}</div>
+{% endif %}
+
+{% if "Error" in message[1]: %}
+<div class="alert alert-warning">
+                { { message[1] }}</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+</div>
 
 {% endblock %} 
