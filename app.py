@@ -17,5 +17,9 @@ def submit():
 def item(id):
     return render_template('item.html', id=id)
 
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
