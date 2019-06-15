@@ -1,0 +1,44 @@
+<nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Rent-A-Thing</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <!-- <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/articles">Articles</a></li> -->
+            <div class = "container">
+              <div class ="buttons-top-right" align="right">
+                <!-- <input type="button" value="Post" >
+                <input type="button" value="My Listings" > -->
+              </div>
+              <form action = "/submit">
+                <input type="text" name="location" placeholder="Enter the type of item">
+                <input type="text" name="item" placeholder="Enter the city or zipcode">
+                <input type="submit" value="Submit" class="btn btn-primary">
+                
+            </div>
+          </div>           
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            {% if session.logged_in %}
+              <li><a href="/post">Post Items</a></li>
+              <li><a href="/list_my_items">List My Items</a></li>
+              <li><a href="/logout">Logout</a></li>
+            {% else %}
+              <li><a href="/register">Register</a></li>
+              <li><a href="/login">Login</a></li>
+            {% endif %}
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
