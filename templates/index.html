@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-      My Yelpclone Website
+      Rent&Booking.com
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
   </head>
@@ -10,13 +10,16 @@
   <body>
     <div class = "jumbotron">
       <div class = "container">
-
-        <h2>What type of business would you like to search for?</h2><br>
-
+        <div class ="buttons-top-right" align="right">
+          <input type="button" value="Post" >
+          <input type="button" value="My Listings" >
+        </div>
+        <h2>Rent and Booking</h2><br>
         <form action = "/submit">
-          <input type="text" name="location" placeholder="Enter a City Name">
-          <input type="text" name="term" placeholder="Type of Business to Search for">
-          <input type="submit" value="submit" class="btn btn-primary">
+          <input type="text" name="location" placeholder="Enter the type of item">
+          <input type="text" name="item" placeholder="Enter the city or zipcode">
+          <input type="submit" value="Submit" class="btn btn-primary">
+          
       </div>
     </div>
   </body>
