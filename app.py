@@ -29,51 +29,51 @@ def showThings():
 ######The following routes mentioning /books all need to be changed#######
 
 #This will let us Create a new book and save it in our database
-@app.route('/books/new/',methods=['GET','POST'])
-def newBook():
-   if request.method == 'POST':
-       newBook = Book(title = request.form['name'], author = request.form['author'], genre = request.form['genre'])
-       session.add(newBook)
-       session.commit()
-       return redirect(url_for('showBooks'))
-   else:
-       return render_template('newBook.html')
-
-
-#This will let us Update our books and save it in our database
-@app.route("/books/<int:book_id>/edit/", methods = ['GET', 'POST'])
-def editBook(book_id):
-   editedBook = session.query(Book).filter_by(id=book_id).one()
-   if request.method == 'POST':
-       if request.form['name']:
-           editedBook.title = request.form['name']
-           return redirect(url_for('showBooks'))
-   else:
-       return render_template('editBook.html', book = editedBook)
-
-#This will let us Delete our book
-@app.route('/books/<int:book_id>/delete/', methods = ['GET','POST'])
-def deleteBook(book_id):
-   bookToDelete = session.query(Book).filter_by(id=book_id).one()
-   if request.method == 'POST':
-       session.delete(bookToDelete)
-       session.commit()
-       return redirect(url_for('showBooks', book_id=book_id))
-   else:
-       return render_template('deleteBook.html',book = bookToDelete)
-       
-
-#@app.route('/')
-def hello_world():
-    return render_template('home.html')
-
-@app.route('/submit')
-def submit():
-    return render_template('items.html', items = Items)
-
-@app.route('/item/<string:id>')
-def item(id):
-    return render_template('item.html', id=id)
+# @app.route('/books/new/',methods=['GET','POST'])
+# def newBook():
+#    if request.method == 'POST':
+#        newBook = Book(title = request.form['name'], author = request.form['author'], genre = request.form['genre'])
+#        session.add(newBook)
+#        session.commit()
+#        return redirect(url_for('showBooks'))
+#    else:
+#        return render_template('newBook.html')
+# 
+# 
+# #This will let us Update our books and save it in our database
+# @app.route("/books/<int:book_id>/edit/", methods = ['GET', 'POST'])
+# def editBook(book_id):
+#    editedBook = session.query(Book).filter_by(id=book_id).one()
+#    if request.method == 'POST':
+#        if request.form['name']:
+#            editedBook.title = request.form['name']
+#            return redirect(url_for('showBooks'))
+#    else:
+#        return render_template('editBook.html', book = editedBook)
+# 
+# #This will let us Delete our book
+# @app.route('/books/<int:book_id>/delete/', methods = ['GET','POST'])
+# def deleteBook(book_id):
+#    bookToDelete = session.query(Book).filter_by(id=book_id).one()
+#    if request.method == 'POST':
+#        session.delete(bookToDelete)
+#        session.commit()
+#        return redirect(url_for('showBooks', book_id=book_id))
+#    else:
+#        return render_template('deleteBook.html',book = bookToDelete)
+#        
+# 
+# #@app.route('/')
+# def hello_world():
+#     return render_template('home.html')
+# 
+# @app.route('/submit')
+# def submit():
+#     return render_template('items.html', items = Items)
+# 
+# @app.route('/item/<string:id>')
+# def item(id):
+#     return render_template('item.html', id=id)
 
 # @app.route('/register')
 # def register():
