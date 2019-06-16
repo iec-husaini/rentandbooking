@@ -3,3 +3,7 @@
 .DS_Store
 .vscode/
 .vscode
+__pycache__
+rent
+*.pyc
+*.db

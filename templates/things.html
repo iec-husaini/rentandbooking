@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+  <h1>Things</h1>
+  <table>
+      <col width="10">
+      <col width="60">
+      <col width="100">
+      <col width="60">
+      <col width="60">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Status</th>
+      <th>User</th>
+      <th>Cost</th>
+      <th>Description</th>
+    </tr>
+  </table>
+  <table>
+      <col width="10">
+      <col width="60">
+      <col width="100">
+      <col width="60">
+      <col width="60">
+    {% for thing in things %}
+    <tr>
+      <td><a href="thing/{{thing.id}}">{{thing.thingId}}</a></td>
+      <td><a href="thing/{{thing.id}}">{{thing.name}}</a></td>
+      <td><a href="thing/{{thing.id}}">{{thing.category}}</a></td>
+      <td><a href="thing/{{thing.id}}">{{thing.status}}</a></td>
+      <td><a href="thing/{{thing.id}}">{{thing.user}}</a></td>
+      <td><a href="thing/{{thing.id}}">{{thing.cost}}</a></td>
+      <td><a href="thing/{{thing.id}}">{{thing.desc}}</a></td>
+
+    </tr>
+    {% endfor %}
+  </table>
+  {% endblock %}  
